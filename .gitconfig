@@ -1,0 +1,24 @@
+[user]
+	name = koffeinfrei
+	email = mail@koffeinfrei.org
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 1190x941+211+24
+	main-window-view = FileView
+	file-view-vpane-position = 871
+	history-view-vpane-position = 739
+	file-view-hpane-position = 245
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[alias]
+	meld = !/home/lex/bin/git-meld.pl
+        st = status -bs
+        ci = commit
+        co = checkout
+        di = diff
+        dc = diff --cached
+        b = branch
+        fa = fetch --all
+        lg = log --pretty=format:\"%Cgreen%h%Creset %Cblue%ad%Creset %s%C(yellow)%d%Creset %Cblue[%an]%Creset\" --graph --date=short
