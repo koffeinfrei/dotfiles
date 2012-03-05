@@ -20,3 +20,5 @@
         b = branch
         fa = fetch --all
         lg = log --pretty=format:\"%Cgreen%h%Creset %Cblue%ad%Creset %s%C(yellow)%d%Creset %Cblue[%an]%Creset\" --graph --date=short
+        amend = commit --amend
+        au = add -u
