@@ -9,9 +9,7 @@
 	history-view-vpane-position = 739
 	file-view-hpane-position = 245
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+	ui = auto
 [alias]
 	meld = !/home/lex/bin/git-meld.pl
         st = status -bs
