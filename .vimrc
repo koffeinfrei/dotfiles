@@ -36,6 +36,9 @@ endif
 
 colorscheme railscasts
 
+" highlight lines longer than 80 columns
+:match ErrorMsg '\%>80v.\+'
+
 " multipurpose tab key
 " Indent if we're at the beginning of a line. Else, do completion.
 function! InsertTabWrapper()
