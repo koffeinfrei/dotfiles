@@ -39,6 +39,12 @@ colorscheme railscasts
 " highlight lines longer than 80 columns
 :match ErrorMsg '\%>80v.\+'
 
+" map capital W and Q to w and q
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q'))
+cnoreabbrev <expr> WQ ((getcmdtype() is# ':' && getcmdline() is# 'WQ')?('wq'):('WQ'))
+cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))
+
 " multipurpose tab key
 " Indent if we're at the beginning of a line. Else, do completion.
 function! InsertTabWrapper()
