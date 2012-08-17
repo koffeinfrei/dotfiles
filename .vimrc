@@ -45,6 +45,10 @@ cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q')
 cnoreabbrev <expr> WQ ((getcmdtype() is# ':' && getcmdline() is# 'WQ')?('wq'):('WQ'))
 cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))
 
+" ctags maps, remap goto, go back
+nnoremap <leader>g <C-]>
+nnoremap <leader>h <C-T>
+
 " multipurpose tab key
 " Indent if we're at the beginning of a line. Else, do completion.
 function! InsertTabWrapper()
