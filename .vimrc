@@ -130,3 +130,6 @@ map <leader>T :call RunNearestTest()<cr>
 map <leader>a :call RunTests('.')<cr>
 map <leader>c :w\|:!script/cucumber<cr>
 map <leader>w :w\|:!script/cucumber --profile wip<cr>
+
+" visual mode search, searches for the selected text
+:vmap * "qy/<C-R>q<CR>
