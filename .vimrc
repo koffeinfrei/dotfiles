@@ -26,6 +26,8 @@ set copyindent " copy the previous indentation on autoindenting
 set wildmode=longest,list " use emacs-style tab completion when selecting files, etc
 set wildmenu " make tab completion for files/buffers act like bash
 
+set laststatus=2 " always show status line
+
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
