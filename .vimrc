@@ -2,6 +2,19 @@
 let mapleader=","
 let g:mapleader=","
 
+filetype off " temporary for vundle
+
+" bundles
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-fugitive'
+Bundle 'slim-template/vim-slim'
+Bundle 'Railscasts-Theme-GUIand256color'
+
 filetype on " Enable filetype detection
 filetype indent on " Enable filetype-specific indenting
 filetype plugin on " Enable filetype-specific plugins

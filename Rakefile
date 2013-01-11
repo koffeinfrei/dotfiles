@@ -50,6 +50,12 @@ task :uninstall do
   end
 end
 
+desc "sets up vim plugins"
+task :vim do
+  `git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
+  `vim +BundleInstall +qall`
+end
+
 task :default => :install
 
 def files
