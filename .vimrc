@@ -13,6 +13,7 @@ Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'slim-template/vim-slim'
+Bundle 'tomtom/tcomment_vim'
 Bundle 'Railscasts-Theme-GUIand256color'
 
 filetype on " Enable filetype detection
