@@ -59,5 +59,5 @@ end
 task :default => :install
 
 def files
-  Dir['.[!.]*'].delete_if{|x| x == '.git'}
+  Dir['.[!.]*'].delete_if{|x| x == '.git'} << 'bin'
 end
