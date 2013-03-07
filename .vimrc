@@ -17,6 +17,7 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'Railscasts-Theme-GUIand256color'
 Bundle 'godlygeek/tabular'
 Bundle 'quentindecock/vim-cucumber-align-pipes'
+Bundle 'rking/ag.vim'
 
 filetype on " Enable filetype detection
 filetype indent on " Enable filetype-specific indenting
