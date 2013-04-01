@@ -18,6 +18,7 @@ Bundle 'Railscasts-Theme-GUIand256color'
 Bundle 'godlygeek/tabular'
 Bundle 'quentindecock/vim-cucumber-align-pipes'
 Bundle 'rking/ag.vim'
+Bundle 'nelstrom/vim-visual-star-search'
 
 filetype on " Enable filetype detection
 filetype indent on " Enable filetype-specific indenting
@@ -149,6 +150,3 @@ map <leader>T :call RunNearestTest()<cr>
 map <leader>a :call RunTests('.')<cr>
 map <leader>c :w\|:!script/cucumber<cr>
 map <leader>w :w\|:!script/cucumber --profile wip<cr>
-
-" visual mode search, searches for the selected text
-:vmap * "qy/<C-R>q<CR>
