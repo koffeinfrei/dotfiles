@@ -12,13 +12,17 @@ Bundle 'gmarik/vundle'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-fugitive'
-Bundle 'slim-template/vim-slim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'Railscasts-Theme-GUIand256color'
 Bundle 'godlygeek/tabular'
 Bundle 'quentindecock/vim-cucumber-align-pipes'
 Bundle 'rking/ag.vim'
 Bundle 'nelstrom/vim-visual-star-search'
+
+" file formats
+Bundle 'slim-template/vim-slim'
+Bundle 'juvenn/mustache.vim'
+Bundle 'kchmck/vim-coffee-script'
 
 filetype on " Enable filetype detection
 filetype indent on " Enable filetype-specific indenting
@@ -47,6 +51,9 @@ set wildmenu " make tab completion for files/buffers act like bash
 " custom statusline
 set laststatus=2 " always show status line
 set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%{fugitive#statusline()}%=%c,%l/%L\ %P
+
+" hamlc
+au BufRead,BufNewFile *.hamlc set ft=haml
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
