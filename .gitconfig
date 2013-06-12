@@ -23,3 +23,5 @@
     amend = commit --amend
     au = add -u
     ap = add -p
+[core]
+	editor = vim
