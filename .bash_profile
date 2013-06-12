@@ -12,6 +12,10 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/opt
 PATH=$PATH:$HOME/bin/adt/eclipse/:$HOME/bin/adt/sdk/tools/:$HOME/bin/adt/sdk/platform-tools/
 
+# rbenv
+PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # hub (extend git with github)
 eval "$(hub alias -s)"
 
