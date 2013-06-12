@@ -54,6 +54,13 @@ desc "sets up vim plugins"
 task :vim do
   `git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
   `vim +BundleInstall +qall`
+  puts "------------------------------------------------------------"
+  puts "command-t needs some manual work:"
+  puts "start vim, get the ruby build version: `:ruby p RUBY_VERSION`,"
+  puts "install and use that ruby version,"
+  puts "now go into ~/.vim/bundle/command-t,"
+  puts "execute `rake make`"
+  puts "------------------------------------------------------------"
 end
 
 task :default => :install
