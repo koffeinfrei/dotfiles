@@ -23,6 +23,7 @@
     amend = commit --amend
     au = add -u
     ap = add -p
+    edit = !vim -p $(git ls-files -m)
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
