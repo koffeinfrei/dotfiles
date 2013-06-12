@@ -25,3 +25,5 @@
     ap = add -p
 [core]
 	editor = vim
+[push]
+	default = current
