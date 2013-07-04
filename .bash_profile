@@ -16,8 +16,6 @@ PATH=$PATH:$HOME/bin/adt/eclipse/:$HOME/bin/adt/sdk/tools/:$HOME/bin/adt/sdk/pla
 PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# hub (extend git with github)
-eval "$(hub alias -s)"
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
