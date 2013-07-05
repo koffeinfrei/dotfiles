@@ -70,22 +70,24 @@ GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWUPSTREAM="verbose"
 
-git_status_upstream_substitute="s/ u\([+-]\)/ \1/"
+git_current_branch_name="\$(__git_ps1 '%s' | sed 's/ .\+//')"
 declare -A git_status_substitutes=(
+    ["branch"]="s/$git_current_branch_name //;"
+    ["upstream"]="s/u//;"
     ["outgoing"]="s/+\([0-9]\+\)/▴\1/;"
     ["incoming"]="s/-\([0-9]\+\)/▾\1/;"
     ["untracked"]="s/%/?/;"
     ["staged"]="s/+/✓/;"
     ["unstaged"]="s/*/✕/;"
 )
-git_status_command="\$(__git_ps1 '(%s)'| sed '$git_status_upstream_substitute' | sed '${git_status_substitutes[@]}')"
+git_status_command="($git_current_branch_name \$(__git_ps1 '%s'| sed \"${git_status_substitutes[@]}\"))"
 
 if [ "$color_prompt" = yes ]; then
     PS1="${debian_chroot:+($debian_chroot)}\[\033[0;37m\] \w \[\033[34m\]$git_status_command\[\033[37m\]\$\[\033[00m\] "
 else
     PS1="${debian_chroot:+($debian_chroot)} \w $git_status_command\$ "
 fi
-unset git_status_upstream_substitute git_status_substitutes git_status_command
+unset git_status_substitutes git_status_command git_current_branch_name
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
