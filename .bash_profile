@@ -1,10 +1,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# bash git prompt
-#. .bash/bash-git-prompt/git_remote_check.sh
-#. .bash/bash-git-prompt/git_prompt.sh
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 PATH=$PATH:$HOME/bin
