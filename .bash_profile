@@ -67,15 +67,15 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWUPSTREAM="verbose"
 
 git_current_branch_name="\$(__git_ps1 '%s' | sed 's/ .\+//')"
-declare -A git_status_substitutes=(
-    ["remove_branch"]="s/$git_current_branch_name //;"
-    ["upstream"]="s/u//;"
-    ["outgoing"]="s/+\([0-9]\+\)/▴\1/;"
-    ["incoming"]="s/-\([0-9]\+\)/▾\1/;"
-    ["untracked"]="s/%/?/;"
-    ["staged"]="s/+/✓/;"
-    ["unstaged"]="s/*/✕/;"
-    ["insert_branch"]="s/\(.\+\)/($git_current_branch_name \1)/;"
+git_status_substitutes=(
+    "s/$git_current_branch_name //;"            # remove branch temporarily
+    "s/u//;"                                    # upstream
+    "s/+\([0-9]\+\)/▴\1/;"                      # outgoing
+    "s/-\([0-9]\+\)/▾\1/;"                      # incoming
+    "s/%/?/;"                                   # untracked
+    "s/+/✓/;"                                   # staged
+    "s/*/✕/;"                                   # unstaged
+    "s/\(.\+\)/($git_current_branch_name \1)/;" # insert branch again
 )
 git_status_command="\$(__git_ps1 '%s'| sed \"${git_status_substitutes[@]}\")"
 
