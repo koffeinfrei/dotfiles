@@ -68,15 +68,16 @@ GIT_PS1_SHOWUPSTREAM="verbose"
 
 git_current_branch_name="\$(__git_ps1 '%s' | sed 's/ .\+//')"
 declare -A git_status_substitutes=(
-    ["branch"]="s/$git_current_branch_name //;"
+    ["remove_branch"]="s/$git_current_branch_name //;"
     ["upstream"]="s/u//;"
     ["outgoing"]="s/+\([0-9]\+\)/▴\1/;"
     ["incoming"]="s/-\([0-9]\+\)/▾\1/;"
     ["untracked"]="s/%/?/;"
     ["staged"]="s/+/✓/;"
     ["unstaged"]="s/*/✕/;"
+    ["insert_branch"]="s/\(.\+\)/($git_current_branch_name \1)/;"
 )
-git_status_command="($git_current_branch_name \$(__git_ps1 '%s'| sed \"${git_status_substitutes[@]}\"))"
+git_status_command="\$(__git_ps1 '%s'| sed \"${git_status_substitutes[@]}\")"
 
 if [ "$color_prompt" = yes ]; then
     PS1="${debian_chroot:+($debian_chroot)}\[\033[0;37m\] \w \[\033[34m\]$git_status_command\[\033[37m\]\$\[\033[00m\] "
