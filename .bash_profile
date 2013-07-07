@@ -12,6 +12,9 @@ PATH=$PATH:$HOME/bin/adt/eclipse/:$HOME/bin/adt/sdk/tools/:$HOME/bin/adt/sdk/pla
 PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# autojump
+. /usr/share/autojump/autojump.sh
+
 EDITOR=vim
 
 # don't put duplicate lines or lines starting with space in the history.
