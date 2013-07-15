@@ -70,7 +70,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWUPSTREAM="verbose"
 
-git_current_branch_name="\$(__git_ps1 '%s' | sed 's/ .\+//')"
+git_current_branch_name="\$(__git_ps1 '%s' | sed 's/ .\+//' | sed -e 's/[\\\\/&]/\\\\\\\\&/g')"
 git_status_substitutes=(
     "s/$git_current_branch_name //;"            # remove branch temporarily
     "s/u//;"                                    # upstream
