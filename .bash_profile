@@ -72,14 +72,14 @@ GIT_PS1_SHOWUPSTREAM="verbose"
 
 git_current_branch_name="\$(__git_ps1 '%s' | sed 's/ .\+//' | sed -e 's/[\\\\/&]/\\\\\\\\&/g')"
 git_status_substitutes=(
-    "s/$git_current_branch_name //;"            # remove branch temporarily
-    "s/u//;"                                    # upstream
-    "s/+\([0-9]\+\)/▴\1/;"                      # outgoing
-    "s/-\([0-9]\+\)/▾\1/;"                      # incoming
-    "s/%/?/;"                                   # untracked
-    "s/+/✓/;"                                   # staged
-    "s/*/✕/;"                                   # unstaged
-    "s/\(.\+\)/($git_current_branch_name \1)/;" # insert branch again
+    "s/$git_current_branch_name//;"            # remove branch temporarily
+    "s/u//;"                                   # upstream
+    "s/+\([0-9]\+\)/▴\1/;"                     # outgoing
+    "s/-\([0-9]\+\)/▾\1/;"                     # incoming
+    "s/%/?/;"                                  # untracked
+    "s/+/✓/;"                                  # staged
+    "s/*/✕/;"                                  # unstaged
+    "s/\(.*\)/($git_current_branch_name\1)/;"  # insert branch again
 )
 git_status_command="\$(__git_ps1 '%s'| sed \"${git_status_substitutes[@]}\")"
 
