@@ -31,6 +31,7 @@ filetype indent on " Enable filetype-specific indenting
 filetype plugin on " Enable filetype-specific plugins
 
 set number  " line numbers
+set relativenumber " with 'number': hybrid line number mode
 set nobackup " no *~ backup files
 
 set incsearch " incremental search
