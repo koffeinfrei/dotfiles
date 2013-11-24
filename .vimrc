@@ -18,6 +18,8 @@ Bundle 'godlygeek/tabular'
 Bundle 'quentindecock/vim-cucumber-align-pipes'
 Bundle 'rking/ag.vim'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-endwise'
 
 " file formats
 Bundle 'slim-template/vim-slim'
