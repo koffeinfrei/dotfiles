@@ -58,6 +58,11 @@ set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%{fugitive#status
 " hamlc
 au BufRead,BufNewFile *.hamlc set ft=haml
 
+" rabl
+au BufRead,BufNewFile *.rabl setf ruby
+au BufRead,BufNewFile *.rabl syn keyword rubyRabl node attribute object child collection attributes glue extends
+au BufRead,BufNewFile *.rabl hi def link rubyRabl Function
+
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
