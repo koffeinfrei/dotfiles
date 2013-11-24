@@ -126,9 +126,9 @@ function! RunTests(filename)
         if filereadable("script/test")
             exec ":!script/test " . a:filename
         elseif filereadable("Gemfile")
-            exec ":!bundle exec rspec --color " . a:filename
+            exec ":!bundle exec rspec --color --drb " . a:filename
         else
-            exec ":!rspec --color " . a:filename
+            exec ":!rspec --color --drb " . a:filename
         end
     end
 endfunction
@@ -155,13 +155,19 @@ function! RunTestFile(...)
     call RunTests(t:grb_test_file . command_suffix)
 endfunction
 
-function! RunNearestTest()
+function! RunNearestTest(...)
+    if a:0
+        let command_suffix = " " . a:1
+    else
+        let command_suffix = ""
+    endif
     let spec_line_number = line('.')
-    call RunTestFile(":" . spec_line_number . " -b")
+    call RunTestFile(":" . spec_line_number . command_suffix)
 endfunction
 
-map <leader>t :call RunTestFile()<cr>
-map <leader>T :call RunNearestTest()<cr>
-map <leader>a :call RunTests('.')<cr>
-map <leader>c :w\|:!script/cucumber<cr>
-map <leader>w :w\|:!script/cucumber --profile wip<cr>
+map <leader>tf :call RunTestFile()<cr>
+map <leader>tt :call RunNearestTest()<cr>
+map <leader>td :call RunNearestTest('-d')<cr>
+map <leader>ta :call RunTests('.')<cr>
+map <leader>tc :w\|:!script/cucumber<cr>
+map <leader>tw :w\|:!script/cucumber --profile wip<cr>
