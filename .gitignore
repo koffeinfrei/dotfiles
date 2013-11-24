@@ -1,3 +1,7 @@
 *.sw[po]
 tags
 .rbx
+
+# ignore everything in bin/ except git-meld
+bin/*
+!bin/git-meld.pl
