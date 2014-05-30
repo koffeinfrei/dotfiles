@@ -15,6 +15,7 @@
     st = status -bs
     ci = commit
     co = checkout
+    cos = !git branch | cut -c 3- | selecta | xargs git checkout
     di = diff
     dc = diff --cached
     b = branch
