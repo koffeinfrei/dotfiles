@@ -26,3 +26,5 @@ function psgrep() { ps auxf | grep -v grep | grep "$@" -i --color=auto; }
 function nfind() { find . -iname "*$@*"; }
 
 alias trm='trash-put'
+
+alias be="bundle exec"
