@@ -19,6 +19,7 @@ Bundle 'rking/ag.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-endwise'
+Bundle 'bogado/file-line'
 
 " file formats
 Bundle 'slim-template/vim-slim'
