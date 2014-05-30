@@ -27,6 +27,7 @@
     ap = add -p
     edit = !vim -p $(git ls-files -m)
     srs = !git stash && git rebase && git stash pop
+    ri = rebase -i --autosquash
 [core]
     excludesfile = ~/.gitignore
     editor = vim
