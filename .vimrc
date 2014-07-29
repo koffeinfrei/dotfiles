@@ -193,3 +193,5 @@ map <leader>td :call RunNearestTest('-d')<cr>
 map <leader>ta :call RunTests('.')<cr>
 map <leader>tc :w\|:!script/cucumber<cr>
 map <leader>tw :w\|:!script/cucumber --profile wip<cr>
+
+map <leader>nt :tabnew<cr>
