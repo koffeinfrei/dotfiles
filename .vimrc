@@ -51,6 +51,9 @@ set copyindent " copy the previous indentation on autoindenting
 set wildmode=longest,list " use emacs-style tab completion when selecting files, etc
 set wildmenu " make tab completion for files/buffers act like bash
 
+set synmaxcol=1000 " disable syntax highlighting for long lines
+set scrolloff=5 " start scrolling early
+
 " custom statusline
 set laststatus=2 " always show status line
 set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%{fugitive#statusline()}%=%c,%l/%L\ %P
