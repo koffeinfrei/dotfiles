@@ -1,6 +1,6 @@
 " set leader to ,
-let mapleader=","
-let g:mapleader=","
+let mapleader="\<Space>"
+let g:mapleader="\<Space>"
 
 filetype off " temporary for vundle
 
