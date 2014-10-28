@@ -195,3 +195,14 @@ map <leader>tc :w\|:!script/cucumber<cr>
 map <leader>tw :w\|:!script/cucumber --profile wip<cr>
 
 map <leader>nt :tabnew<cr>
+
+" search everything
+map <leader>sa :Ag<space>
+" search stylesheets
+map <leader>ss :Ag -G "\.(sass\|css\|scss)$"<space>
+" search javascripts
+map <leader>sj :Ag -G "\.(js\|coffee\|coffee\.erb)$"<space>
+" search ruby files
+map <leader>sr :Ag -G "\.(rb)$"<space>
+" search view files
+map <leader>sv :Ag -G "\.(slim\|haml\|erb)$"<space>
