@@ -17,6 +17,7 @@ alias less='less -R -i'
 
 alias ai='sudo aptitude install'
 alias as='sudo aptitude search'
+function asi() { ai $(as "$@" | selecta | awk '{print $2}') ; }
 
 # force colors in tmux
 alias tmux='tmux -2'
