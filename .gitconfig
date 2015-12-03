@@ -32,6 +32,7 @@
     ri = rebase -i --autosquash
     ss = stash save
     sp = stash pop
+    sv = "!f() { git show stash@{$@}; }; f"
     sl = stash list
 [core]
     excludesfile = ~/.gitignore
