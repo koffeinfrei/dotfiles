@@ -15,6 +15,9 @@ eval "$(rbenv init -)"
 # autojump
 . /usr/share/autojump/autojump.sh
 
+# thefuck
+eval "$(thefuck-alias)"
+
 export EDITOR=vim
 
 # don't put duplicate lines or lines starting with space in the history.
