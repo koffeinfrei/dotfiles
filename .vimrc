@@ -68,6 +68,12 @@ au BufRead,BufNewFile *.rabl hi def link rubyRabl Function
 " prawn
 au BufRead,BufNewFile *.prawn setf ruby
 
+" excel templates (axsls)
+au BufRead,BufNewFile *.axlsx setf ruby
+
+" cap files
+au BufRead,BufNewFile *.cap,Capfile setf ruby
+
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
