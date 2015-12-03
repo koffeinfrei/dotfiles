@@ -40,10 +40,10 @@ set ignorecase smartcase " make searches case-sensitive only if they contain upp
 set smartcase " ignore case if search pattern is all lowercase,case-sensitive otherwise
 
 set expandtab "replace <TAB> with spaces
-set softtabstop=4
-set tabstop=4
+set softtabstop=2
+set tabstop=2
 set smarttab " insert tabs on the start of a line according to context
-set shiftwidth=4
+set shiftwidth=2
 set autoindent " auto indentation
 set copyindent " copy the previous indentation on autoindenting
 
