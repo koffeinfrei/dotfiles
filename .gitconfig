@@ -21,6 +21,8 @@
     b = branch
     fa = fetch --all
     lg = log --pretty=format:\"%Cgreen%h%Creset %Cblue%ad%Creset %s%C(yellow)%d%Creset %Cblue[%an]%Creset\" --graph --date=short
+    lgg = !git lg origin/master..
+    lgl = !git lg ..origin/master
     lf = log --pretty=format:\"%Cgreen%h%Creset %C(yellow) %d%Creset %s%Cblue [%cn]\" --decorate --numstat
     amend = commit --amend
     au = add -u
