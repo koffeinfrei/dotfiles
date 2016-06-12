@@ -20,6 +20,7 @@ Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-endwise'
 Bundle 'bogado/file-line'
+Bundle 'vim-es6'
 
 " file formats
 Bundle 'slim-template/vim-slim'
@@ -71,8 +72,10 @@ au BufRead,BufNewFile *.prawn setf ruby
 " excel templates (axsls)
 au BufRead,BufNewFile *.axlsx setf ruby
 
-" cap files
-au BufRead,BufNewFile *.cap,Capfile setf ruby
+" cap and other ruby files
+au BufRead,BufNewFile *.cap,Capfile,Bowerfile setf ruby
+
+" au BufRead,BufNewFile *.jsx,*.jsx.erb setf javascript
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
