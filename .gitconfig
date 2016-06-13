@@ -35,6 +35,7 @@
     sv = "!f() { git show stash@{$@}; }; f"
     sl = stash list
     who = shortlog -ns --
+    alpha = !~/src/git-alpha/git-alpha
 [core]
     excludesfile = ~/.gitignore
     editor = vim
