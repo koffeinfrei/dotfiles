@@ -218,3 +218,6 @@ map <leader>sj :Ag -G "\.(js\|coffee\|coffee\.erb)$"<space>
 map <leader>sr :Ag -G "\.(rb)$"<space>
 " search view files
 map <leader>sv :Ag -G "\.(slim\|haml\|erb)$"<space>
+
+" tabularize by comma
+map <leader>ic Tabularize /,\zs<cr>
