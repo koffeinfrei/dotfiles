@@ -11,7 +11,7 @@
 [color]
     ui = auto
 [alias]
-    meld = !/home/lex/bin/git-meld.pl
+    meld = !~/bin/git-meld.pl
     st = status -bs
     ci = commit
     co = checkout
