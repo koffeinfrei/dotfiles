@@ -19,6 +19,9 @@ alias ai='sudo aptitude install'
 alias as='sudo aptitude search'
 function asi() { ai $(as "$@" | selecta | awk '{print $2}') ; }
 
+# git aliases
+function gitcc() { git clone "$@" && cd `ls -t | head -1`; }
+
 # force colors in tmux
 alias tmux='tmux -2'
 
