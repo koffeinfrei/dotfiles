@@ -21,6 +21,7 @@ function asi() { ai $(as "$@" | selecta | awk '{print $2}') ; }
 
 # git aliases
 function gitcc() { git clone "$@" && cd `ls -t | head -1`; }
+alias git..='cd $(git rev-parse --show-toplevel || echo ".")'
 
 # force colors in tmux
 alias tmux='tmux -2'
