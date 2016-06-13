@@ -34,6 +34,7 @@
     sp = stash pop
     sv = "!f() { git show stash@{$@}; }; f"
     sl = stash list
+    who = shortlog -ns --
 [core]
     excludesfile = ~/.gitignore
     editor = vim
