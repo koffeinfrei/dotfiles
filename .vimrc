@@ -101,6 +101,9 @@ cnoreabbrev <expr> Qa ((getcmdtype() is# ':' && getcmdline() is# 'Qa')?('qa'):('
 nnoremap <leader>g <C-]>
 nnoremap <leader>h <C-T>
 
+" save as root
+cmap w!! w !sudo tee % >/dev/null
+
 " multipurpose tab key
 " Indent if we're at the beginning of a line. Else, do completion.
 function! InsertTabWrapper()
