@@ -3,5 +3,5 @@ tags
 .rbx
 
 # ignore everything in bin/ except git-meld
-bin/*
-!bin/git-meld.pl
+/bin/*
+!/bin/git-meld.pl
