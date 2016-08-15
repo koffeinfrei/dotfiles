@@ -213,7 +213,7 @@ map <leader>sa :Ag<space>
 " search stylesheets
 map <leader>ss :Ag -G "\.(sass\|css\|scss)$"<space>
 " search javascripts
-map <leader>sj :Ag -G "\.(js\|coffee\|coffee\.erb)$"<space>
+map <leader>sj :Ag -G "\.(js\|coffee\|coffee\.erb\|es6)$"<space>
 " search ruby files
 map <leader>sr :Ag -G "\.(rb)$"<space>
 " search view files
