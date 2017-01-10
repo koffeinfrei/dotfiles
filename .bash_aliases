@@ -36,3 +36,5 @@ function nfind() { find . -iname "*$@*"; }
 alias trm='trash-put'
 
 alias be="bundle exec"
+
+function meteo() { curl -4 "http://wttr.in/$(echo ${@:-zurich} | tr ' ' _)"; }
