@@ -56,7 +56,19 @@ task :vim do
   `vim +PlugInstall +qall`
 end
 
-task :default => :install
+desc "creates a symlink for neovim"
+task :neovim do
+  config_dir = File.join(Dir.home, '.config/nvim')
+  source = File.join(Dir.home, '.vimrc')
+  target = File.join(config_dir, 'init.vim')
+
+  FileUtils.mkdir(config_dir) unless File.exists?(config_dir)
+  FileUtils.ln_s(source, target) unless File.exists?(target)
+
+  puts "linked #{target} -> #{source}."
+end
+
+task default: [:install, :vim, :neovim]
 
 def files
   Dir['.[!.]*'].delete_if{|x| x == '.git'} << 'bin'
