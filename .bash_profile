@@ -22,6 +22,8 @@ export NVM_DIR="$HOME/.nvm"
 
 export EDITOR=vim
 
+export FZF_DEFAULT_COMMAND='ag --nogroup --nocolor --column -l .'
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
