@@ -52,8 +52,8 @@ end
 
 desc "sets up vim plugins"
 task :vim do
-  `git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
-  `vim +BundleInstall +qall`
+  `curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+  `vim +PlugInstall +qall`
 end
 
 task :default => :install

@@ -4,28 +4,29 @@ let g:mapleader="\<Space>"
 
 filetype off " temporary for vundle
 
-" bundles
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" plugins
+call plug#begin('~/.local/share/nvim/plugged')
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'Railscasts-Theme-GUIand256color'
-Bundle 'godlygeek/tabular'
-Bundle 'quentindecock/vim-cucumber-align-pipes'
-Bundle 'rking/ag.vim'
-Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-endwise'
-Bundle 'bogado/file-line'
-Bundle 'vim-es6'
+Plug 'gmarik/vundle'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-fugitive'
+Plug 'tomtom/tcomment_vim'
+Plug 'vim-scripts/Railscasts-Theme-GUIand256color'
+Plug 'godlygeek/tabular'
+Plug 'quentindecock/vim-cucumber-align-pipes'
+Plug 'rking/ag.vim'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-endwise'
+Plug 'bogado/file-line'
+Plug 'isRuslan/vim-es6'
 
 " file formats
-Bundle 'slim-template/vim-slim'
-Bundle 'juvenn/mustache.vim'
-Bundle 'kchmck/vim-coffee-script'
+Plug 'slim-template/vim-slim'
+Plug 'juvenn/mustache.vim'
+Plug 'kchmck/vim-coffee-script'
+
+call plug#end()
 
 filetype on " Enable filetype detection
 filetype indent on " Enable filetype-specific indenting
