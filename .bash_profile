@@ -88,7 +88,7 @@ git_status_substitutes=(
 )
 git_status_command="\$(__git_ps1 '%s'| sed \"${git_status_substitutes[@]}\")"
 
-if [ "$color_prompt" = yes ]; then
+if [ "$color_prompt" = yes ] || [ "$COLORTERM" = truecolor ]; then
     PS1="${debian_chroot:+($debian_chroot)}\[\033[0;37m\033[01;2m\] \w \[\033[01;22m\033[34m\]$git_status_command\[\033[37m\] \[\033[1m\033[01;32m\]➜\[\033[00m\] "
 else
     PS1="${debian_chroot:+($debian_chroot)} \w $git_status_command ➜ "
