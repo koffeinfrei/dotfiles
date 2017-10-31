@@ -21,6 +21,8 @@ Plug 'tpope/vim-endwise'
 Plug 'bogado/file-line'
 Plug 'isRuslan/vim-es6'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'janko-m/vim-test'
+Plug 'tpope/vim-dispatch'
 
 " file formats
 Plug 'slim-template/vim-slim'
@@ -127,67 +129,11 @@ augroup vimrcEx
     autocmd FileType ruby,yaml,cucumber set ai sw=2 sts=2 et
 augroup END
 
-" running tests
-function! RunTests(filename)
-    " write the file and run tests for the given filename
-    :w
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    if match(a:filename, '\.feature$') != -1
-        exec ":!script/features " . a:filename
-    else
-        if filereadable("script/test")
-            exec ":!script/test " . a:filename
-        elseif filereadable("Gemfile")
-            exec ":!bundle exec rspec --color --drb " . a:filename
-        else
-            exec ":!rspec --color --drb " . a:filename
-        end
-    end
-endfunction
+" run tests
+let test#strategy = "dispatch"
 
-function! SetTestFile()
-    " set the spec file that tests will be run for.
-    let t:grb_test_file=@%
-endfunction
-
-function! RunTestFile(...)
-    if a:0
-        let command_suffix = a:1
-    else
-        let command_suffix = ""
-    endif
-
-    " run the tests for the previously-marked file.
-    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
-    if in_test_file
-        call SetTestFile()
-    elseif !exists("t:grb_test_file")
-        return
-    end
-    call RunTests(t:grb_test_file . command_suffix)
-endfunction
-
-function! RunNearestTest(...)
-    if a:0
-        let command_suffix = " " . a:1
-    else
-        let command_suffix = ""
-    endif
-    let spec_line_number = line('.')
-    call RunTestFile(":" . spec_line_number . command_suffix)
-endfunction
-
-map <leader>tf :call RunTestFile()<cr>
-map <leader>tt :call RunNearestTest()<cr>
-map <leader>td :call RunNearestTest('-d')<cr>
-map <leader>ta :call RunTests('.')<cr>
-map <leader>tc :w\|:!script/cucumber<cr>
-map <leader>tw :w\|:!script/cucumber --profile wip<cr>
+map <leader>tf :TestFile<cr>
+map <leader>tt :TestNearest<cr>
 
 map <leader>nt :tabnew<cr>
 
