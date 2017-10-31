@@ -4,9 +4,7 @@
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 PATH=$PATH:$HOME/bin
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/opt
-PATH=$PATH:$HOME/bin/adt/eclipse/:$HOME/bin/adt/sdk/tools/:$HOME/bin/adt/sdk/platform-tools/
 
 # rbenv
 PATH="$HOME/.rbenv/bin:$PATH"
