@@ -2,12 +2,9 @@
 let mapleader="\<Space>"
 let g:mapleader="\<Space>"
 
-filetype off " temporary for vundle
-
 " plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'gmarik/vundle'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-fugitive'
 Plug 'tomtom/tcomment_vim'
