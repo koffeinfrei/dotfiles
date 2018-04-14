@@ -152,3 +152,21 @@ map <leader>ic Tabularize /,\zs<cr>
 
 " fuzzy matcher
 nnoremap <leader>f :FZF<cr>
+
+" --------
+" terminal
+" --------
+let g:neoterm_repl_ruby = 'pry'
+let g:neoterm_autoscroll = 1
+
+" execute the current line in a REPL
+nnoremap <silent> <leader>csl :TREPLSendLine<cr>
+" execute the current selection in a REPL
+vnoremap <silent> <leader>css :TREPLSendSelection<cr>
+
+" toggle terminal
+nnoremap <silent> <leader>ct :Ttoggle<cr>
+" clear terminal
+nnoremap <silent> <leader>cl :call neoterm#clear()<cr>
+" kills the current job (send a <c-c>)
+nnoremap <silent> <leader>cc :call neoterm#kill()<cr>
