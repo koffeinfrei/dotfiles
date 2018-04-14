@@ -78,6 +78,9 @@ au BufRead,BufNewFile *.axlsx setf ruby
 " cap and other ruby files
 au BufRead,BufNewFile *.cap,Capfile,Bowerfile setf ruby
 
+" slang
+au BufRead,BufNewFile *.slang setf slim
+
 " au BufRead,BufNewFile *.jsx,*.jsx.erb setf javascript
 
 " Switch syntax highlighting on, when the terminal has colors
