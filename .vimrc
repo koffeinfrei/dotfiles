@@ -136,6 +136,7 @@ let test#strategy = "neoterm"
 
 map <leader>tf :TestFile<cr>
 map <leader>tt :TestNearest<cr>
+map <leader>td :TestFile --format documentation --dry-run<cr>
 
 map <leader>nt :tabnew<cr>
 
