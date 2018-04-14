@@ -19,7 +19,7 @@ Plug 'bogado/file-line'
 Plug 'isRuslan/vim-es6'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'janko-m/vim-test'
-Plug 'tpope/vim-dispatch'
+Plug 'kassio/neoterm'
 
 " file formats
 Plug 'slim-template/vim-slim'
@@ -127,7 +127,7 @@ augroup vimrcEx
 augroup END
 
 " run tests
-let test#strategy = "dispatch"
+let test#strategy = "neoterm"
 
 map <leader>tf :TestFile<cr>
 map <leader>tt :TestNearest<cr>
