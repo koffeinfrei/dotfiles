@@ -16,7 +16,6 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-endwise'
 Plug 'bogado/file-line'
-Plug 'isRuslan/vim-es6'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'janko-m/vim-test'
 Plug 'kassio/neoterm'
@@ -25,6 +24,9 @@ Plug 'kassio/neoterm'
 Plug 'slim-template/vim-slim'
 Plug 'juvenn/mustache.vim'
 Plug 'kchmck/vim-coffee-script'
+Plug 'isRuslan/vim-es6'
+Plug 'leafgarland/typescript-vim'
+Plug 'rhysd/vim-crystal'
 
 call plug#end()
 
@@ -139,7 +141,7 @@ map <leader>sa :Ag<space>
 " search stylesheets
 map <leader>ss :Ag -G "\.(sass\|css\|scss)$"<space>
 " search javascripts
-map <leader>sj :Ag -G "\.(js\|coffee\|coffee\.erb\|es6)$"<space>
+map <leader>sj :Ag -G "\.(js\|coffee\|coffee\.erb\|es6\|ts)$"<space>
 " search ruby files
 map <leader>sr :Ag -G "\.(rb)$"<space>
 " search view files
