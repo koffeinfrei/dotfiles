@@ -1,6 +1,7 @@
 [user]
     name = Alexis Reigel
     email = mail@koffeinfrei.org
+    signingkey = 4F4840A503964251CF7D7F5DC728AF10972E97C0
 [giggle]
     main-window-maximized = false
     main-window-geometry = 1190x941+211+24
@@ -43,3 +44,5 @@
     editor = vim
 [push]
     default = current
+[commit]
+    gpgsign = true
