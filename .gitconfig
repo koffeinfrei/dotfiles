@@ -14,7 +14,6 @@
 [alias]
     st = status -bs
     ci = commit
-    cif = commit --fixup
     co = checkout
     cos = !git branch | cut -c 3- | selecta | xargs git checkout
     di = diff
