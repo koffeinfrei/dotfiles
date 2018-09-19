@@ -77,7 +77,7 @@ au BufRead,BufNewFile *.prawn setf ruby
 au BufRead,BufNewFile *.axlsx setf ruby
 
 " cap and other ruby files
-au BufRead,BufNewFile *.cap,Capfile,Bowerfile setf ruby
+au BufRead,BufNewFile *.cap,Capfile,Bowerfile,Dangerfile setf ruby
 
 " slang
 au BufRead,BufNewFile *.slang setf slim
