@@ -1,4 +1,5 @@
 require 'rake'
+require 'fileutils'
 
 desc "install the dotfiles into the current user's home"
 task :install do
@@ -7,6 +8,10 @@ task :install do
   skip_all = false
 
   home = Dir.home
+
+  # Create ~/bin (if does not exist)
+  FileUtils.mkdir_p(File.join(home, 'bin'))
+
   files.each do |f|
     overwrite = false
     backup = false
@@ -75,5 +80,5 @@ end
 task default: [:install, :vim, :neovim]
 
 def files
-  Dir['.[!.]*'].delete_if{|x| x == '.git'} << 'bin'
+  Dir['.[!.]*', 'bin/*'].reject { |file| file == '.git' }
 end
