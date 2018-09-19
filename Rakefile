@@ -4,26 +4,30 @@ desc "install the dotfiles into the current user's home"
 task :install do
   overwrite_all = false
   backup_all = false
+  skip_all = false
 
   home = Dir.home
   files.each do |f|
     overwrite = false
     backup = false
+    skip = false
 
     target = File.join(home, f)
 
     if File.exists?(target) || File.symlink?(target)
-      unless overwrite_all || backup_all
+      unless overwrite_all || backup_all || skip_all
         puts "File already exists: #{target}, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all"
         case STDIN.gets.chomp
         when 'o' then overwrite = true
         when 'b' then backup = true
         when 'O' then overwrite_all = true
         when 'B' then backup_all = true
-        when 'S' then break
-        when 's' then next
+        when 'S' then skip_all = true
+        when 's' then skip = true
         end
       end
+
+      next if skip || skip_all
 
       FileUtils.rm_rf(target) if overwrite || overwrite_all
       FileUtils.mv(target, "#{target}.dotfiles~") if backup || backup_all
