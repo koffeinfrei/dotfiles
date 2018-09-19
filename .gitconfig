@@ -12,7 +12,6 @@
 [color]
     ui = auto
 [alias]
-    meld = !~/bin/git-meld.pl
     st = status -bs
     ci = commit
     cif = commit --fixup
