@@ -150,7 +150,7 @@ map <leader>sj :Ag -G "\.(js\|coffee\|coffee\.erb\|es6\|ts)$"<space>
 " search ruby files
 map <leader>sr :Ag -G "\.(rb)$"<space>
 " search view files
-map <leader>sv :Ag -G "\.(slim\|haml\|erb)$"<space>
+map <leader>sv :Ag -G "\.(slim\|haml\|erb\|html)$"<space>
 
 " tabularize by comma
 map <leader>ic Tabularize /,\zs<cr>
