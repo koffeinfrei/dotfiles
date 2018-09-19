@@ -27,6 +27,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'isRuslan/vim-es6'
 Plug 'leafgarland/typescript-vim'
 Plug 'rhysd/vim-crystal'
+Plug 'storyn26383/vim-vue'
 
 call plug#end()
 
