@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -eu
+
+default_branch=$(git default-branch)
+first_commit=$(git --no-pager log $default_branch.. --pretty=format:%h | tail -1)
+
+git ri $first_commit~1
