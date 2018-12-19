@@ -31,6 +31,9 @@ alias tmux='tmux -2'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 function psgrep() { ps auxf | grep -v grep | grep "$@" -i --color=auto; }
+
+function netgrep() { netstat -tulpn | ag "$@"; }
+
 function nfind() { find . -iname "*$@*"; }
 
 alias trm='trash-put'
