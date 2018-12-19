@@ -4,7 +4,11 @@ set -eu
 
 default_branch=$(git default-branch)
 
-git --no-pager log $default_branch.. --pretty=format:"%h  %s" |
-  selecta |
-  awk '{print $1}' |
-  { read commit; git commit --fixup $commit; }
+if ! [ $# -eq 0 ]; then
+  git commit --fixup "$1"
+else
+  git --no-pager log $default_branch.. --pretty=format:"%h  %s" |
+    selecta |
+    awk '{print $1}' |
+    { read commit; git commit --fixup $commit; }
+fi
