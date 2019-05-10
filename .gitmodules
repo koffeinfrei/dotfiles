@@ -4,3 +4,6 @@
 [submodule "vendor/git-alpha"]
 	path = vendor/git-alpha
 	url = git@github.com:koffeinfrei/git-alpha.git
+[submodule "vendor/bash-prompt"]
+	path = vendor/bash-prompt
+	url = git@github.com:koffeinfrei/bash-prompt.git

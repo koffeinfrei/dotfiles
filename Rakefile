@@ -80,5 +80,5 @@ end
 task default: [:install, :vim, :neovim]
 
 def files
-  Dir['.[!.]*', 'bin/*'].reject { |file| file == '.git' }
+  `git ls-files -z`.split("\x0").select { |file| file.start_with?('.') || file.start_with?('bin/') }
 end

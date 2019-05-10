@@ -49,61 +49,9 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color|xterm|screen-256color) color_prompt=yes;;
-esac
-
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
-
-# bash git prompt
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWUPSTREAM="verbose"
-
-git_current_branch_name="\$(__git_ps1 '%s' | sed 's/ .\+//' | sed -e 's/[\\\\/&]/\\\\\\\\&/g')"
-git_status_substitutes=(
-    "s/$git_current_branch_name//;"            # remove branch temporarily
-    "s/u//;"                                   # upstream
-    "s/+\([0-9]\+\)/▴\1/;"                     # outgoing
-    "s/-\([0-9]\+\)/▾\1/;"                     # incoming
-    "s/%/?/;"                                  # untracked
-    "s/+/✓/;"                                  # staged
-    "s/*/✕/;"                                  # unstaged
-    "s/\(.*\)/($git_current_branch_name\1)/;"  # insert branch again
-)
-git_status_command="\$(__git_ps1 '%s'| sed \"${git_status_substitutes[@]}\")"
-
-if [ "$color_prompt" = yes ] || [ "$COLORTERM" = truecolor ]; then
-    PS1="${debian_chroot:+($debian_chroot)}\[\033[0;37m\033[01;2m\] \w \[\033[01;22m\033[34m\]$git_status_command\[\033[37m\] \[\033[1m\033[01;32m\]➜\[\033[00m\] "
-else
-    PS1="${debian_chroot:+($debian_chroot)} \w $git_status_command ➜ "
-fi
-unset git_status_substitutes git_status_command git_current_branch_name
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+# bash prompt
+source "$HOME/.config/bash-prompt"
+set_bash_prompt $debian_chroot
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
