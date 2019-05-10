@@ -36,6 +36,10 @@ function netgrep() { netstat -tulpn | ag "$@"; }
 
 function nfind() { find . -iname "*$@*"; }
 
+function search_history() { eval $(history | awk -F"  " '{print $2}' | sort -u | selecta); }
+
+bind '"\e\C-r":"\C-a search_history -- \C-j"'
+
 alias trm='trash-put'
 
 alias be="bundle exec"
