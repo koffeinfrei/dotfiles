@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+tmux new-session -d
+tmux send-keys 'vim' C-m
+tmux new-window
+tmux split-window -h -p 25
+tmux send-keys 'git watch-status' C-m
+tmux split-window -v
+tmux send-keys 'git watch-log' C-m
+tmux new-window
+tmux select-window -t 0
+tmux select-pane -t 0
+
+tmux -2 attach-session -d
