@@ -111,6 +111,10 @@ nnoremap <leader>h <C-T>
 " save as root
 cmap w!! w !sudo tee % >/dev/null
 
+" copy current filename
+nmap <leader>cpfn :call system('xclip -i -selection clipboard', expand('%:t'))<cr>
+nmap <leader>cpfd :call system('xclip -i -selection clipboard', @%)<cr>
+
 " multipurpose tab key
 " Indent if we're at the beginning of a line. Else, do completion.
 function! InsertTabWrapper()
