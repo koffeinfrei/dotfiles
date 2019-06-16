@@ -36,7 +36,7 @@
     sl = stash list
     pf = push --force-with-lease
     who = shortlog -ns --
-    default-branch = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+    default-branch = !git symbolic-ref $(git show-ref | grep HEAD | cut -d ' ' -f2) | rev | cut -d '/' -f1 | rev
     # explicit aliases for implicitly available ones
     alpha = !git-alpha
     fixup = !git-fixup
