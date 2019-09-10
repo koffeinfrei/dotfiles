@@ -41,6 +41,8 @@
     alpha = !git-alpha
     fixup = !git-fixup
     squash = !git-squash
+    watch-status = !git-watch-status
+    watch-log = !git-watch-log
 [core]
     excludesfile = ~/.gitignore
     editor = vim
