@@ -77,7 +77,20 @@ task :neovim do
   puts "linked #{target} -> #{source}."
 end
 
-task default: [:install, :vim, :neovim]
+desc "installs the dependent ubuntu packages"
+task :packages do
+  system("
+    sudo aptitude install -y \
+    curl \
+    trash-cli \
+    exuberant-ctags \
+    autojump \
+    net-tools \
+    thefuck
+   ")
+end
+
+task default: [:packages, :install, :vim, :neovim]
 
 def files
   `git ls-files -z`.split("\x0").select { |file| file.start_with?('.') || file.start_with?('bin/') }
