@@ -10,7 +10,9 @@ task :install do
   home = Dir.home
 
   # Create ~/bin (if does not exist)
-  FileUtils.mkdir_p(File.join(home, 'bin'))
+  files.map { |f| File.dirname(f) }.each do |directory|
+    FileUtils.mkdir_p(File.join(home, directory))
+  end
 
   files.each do |f|
     overwrite = false
@@ -93,5 +95,8 @@ end
 task default: [:packages, :install, :vim, :neovim]
 
 def files
-  `git ls-files -z`.split("\x0").select { |file| file.start_with?('.') || file.start_with?('bin/') }
+  `git ls-files -z`.split("\x0").select do |file|
+    file.start_with?('.') ||
+      file.start_with?('bin/')
+  end
 end
