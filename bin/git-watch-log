@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-watch --color git lgg --color
+watch --color --interval 1 --no-title git lgg --color
