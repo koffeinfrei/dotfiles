@@ -7,6 +7,7 @@ tmux split-window -h -p 25
 tmux send-keys 'git watch-status' C-m
 tmux split-window -v
 tmux send-keys 'git watch-log' C-m
+tmux select-pane -t 0
 tmux new-window
 tmux select-window -t 0
 tmux select-pane -t 0
