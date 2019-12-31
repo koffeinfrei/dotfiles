@@ -48,3 +48,5 @@ function meteo() { curl -4 "http://wttr.in/$(echo ${@:-zurich} | tr ' ' _)"; }
 
 # `fuck` for `thefuck`
 alias fuck='TF_CMD=$(TF_ALIAS=fuck PYTHONIOENCODING=utf-8 TF_SHELL_ALIASES=$(alias) thefuck $(fc -ln -1)) && eval $TF_CMD && history -s $TF_CMD'
+
+alias ag='ag --path-to-ignore ~/.ignore --hidden'
