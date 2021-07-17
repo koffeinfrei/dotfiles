@@ -1,3 +1,19 @@
 #!/usr/bin/env bash
 
-watch --color --interval 1 --no-title git lgg --color
+function log {
+  default_branch=$(git default-branch)
+  current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+  if [ "$default_branch" == "$current_branch" ]; then
+    echo "## $current_branch...origin/${default_branch}"
+    command="git lg origin/${default_branch}.."
+  else
+    echo "## $current_branch...$default_branch"
+    command="git lgg"
+  fi
+
+  $command --color
+}
+export -f log
+
+watch --color --interval 1 --no-title log
