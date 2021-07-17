@@ -36,7 +36,7 @@
     sl = stash list
     pf = push --force-with-lease
     who = shortlog -ns --
-    default-branch = !(git symbolic-ref -q refs/remotes/origin/HEAD || echo 'master') | sed 's@^refs/remotes/origin/@@'
+    default-branch = !(git symbolic-ref -q refs/remotes/origin/HEAD || echo 'main') | sed 's@^refs/remotes/origin/@@'
     # explicit aliases for implicitly available ones
     alpha = !git-alpha
     fixup = !git-fixup
@@ -50,3 +50,5 @@
     default = current
 [commit]
     gpgsign = true
+[init]
+    defaultBranch = main
