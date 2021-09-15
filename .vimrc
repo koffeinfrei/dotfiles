@@ -20,6 +20,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'janko-m/vim-test'
 Plug 'kassio/neoterm'
 Plug 'mbbill/undotree'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  }
 
 " file formats
 Plug 'slim-template/vim-slim'
