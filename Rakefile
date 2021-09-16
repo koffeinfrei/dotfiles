@@ -82,7 +82,7 @@ end
 desc "installs the dependent ubuntu packages"
 task :packages do
   system("
-    sudo aptitude install -y \
+    sudo apt install -y \
     curl \
     trash-cli \
     exuberant-ctags \
