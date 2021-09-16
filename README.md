@@ -1,4 +1,10 @@
-# .files
+<div align="center">
+
+![Dotfiles logo](logo.svg)
+
+</div>
+<h1 align="center">dotfiles</h1>
+
 
 ## Prerequisites
 
@@ -8,30 +14,58 @@
 
 ## Install
 
-```bash
-# 1. Clone the repository (not in your home directory!)
+1. Clone the repository. **Don't do this in the home directory!**
 
-$ git clone git@github.com:koffeinfrei/dotfiles.git
+    ```bash
+    $ cd ~/src # cd to the project directoy
+    $ git clone --recurse-submodules git@github.com:koffeinfrei/dotfiles.git
+    ```
 
-# 2. Recursively update the submodules
+    Alternativerly clone and then recursively update the submodules
 
-$ git submodule update --init --recursive
+    ```bash
+    $ git clone git@github.com:koffeinfrei/dotfiles.git
+    $ git submodule update --init --recursive
+    ```
 
-# 3. Create symlinks to the dotfiles
+1. Install the dotfiles
 
-$ rake install
+    ```bash
+    $ rake
+    ```
 
-# 4. Optional: Sets up the vim plugin manager (Plug)
+    The default task executes the following tasks, each of which can also be run separately.
 
-$ rake vim
+    1. Install the required packages (debian based, i.e. `apt` package manager)
 
-# 5. Optional: Creates a symlink for neovim as vim
+        ```bash
+        $ rake packages
+        ```
 
-$ rake neovim
-```
+    1. Create symlinks to the dotfiles
+
+        ```bash
+        $ rake install
+        ```
+
+    1. Optional: Sets up the vim plugin manager (Plug)
+
+        ```bash
+        $ rake vim
+        ```
+
+    1. Optional: Creates a symlink for neovim as vim
+
+        ```bash
+        $ rake neovim
+        ```
 
 ## Uninstall
 
 ```bash
 $ rake uninstall
 ```
+
+<br>
+
+Made with ☕️  by [Koffeinfrei](https://github.com/koffeinfrei)
