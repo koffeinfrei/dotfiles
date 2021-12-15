@@ -38,6 +38,8 @@
     who = shortlog -ns --
     default-branch = !(git symbolic-ref -q refs/remotes/origin/HEAD || echo 'main') | sed 's@^refs/remotes/origin/@@'
     conflicts = !vim -p `git diff --name-only --diff-filter=U`
+    resolve-ours = !git checkout --ours $@ && git add $@
+    resolve-theirs = !git checkout --theirs $@ && git add $@
     # explicit aliases for implicitly available ones
     alpha = !git-alpha
     fixup = !git-fixup
