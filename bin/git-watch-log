@@ -16,4 +16,4 @@ function log {
 }
 export -f log
 
-watch --color --interval 1 --no-title log
+watch --color --interval 1 --no-title -x bash -c log
