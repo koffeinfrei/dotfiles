@@ -4,11 +4,17 @@ function log {
   default_branch=$(git default-branch)
   current_branch=$(git rev-parse --abbrev-ref HEAD)
 
+  local color_reset='\033[0m'
+  local color_green='\033[0;32m'
+  local color_red='\033[0;31m'
+
   if [ "$default_branch" == "$current_branch" ]; then
-    echo "## $current_branch...origin/${default_branch}"
+    printf "## ${color_green}${current_branch}${color_reset}...${color_red}origin/${default_branch}${color_reset}"
+    echo
     command="lg origin/${default_branch}.."
   else
-    echo "## $current_branch...$default_branch"
+    printf "## ${color_green}${current_branch}${color_reset}...${color_red}${default_branch}${color_reset}"
+    echo
     command="lgg"
   fi
 
