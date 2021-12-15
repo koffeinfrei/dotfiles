@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-watch --color --interval 1 --no-title git -c color.status=always st
+watch --color --interval 1 --no-title git --no-optional-locks -c color.status=always st

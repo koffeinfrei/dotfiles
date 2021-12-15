@@ -6,13 +6,13 @@ function log {
 
   if [ "$default_branch" == "$current_branch" ]; then
     echo "## $current_branch...origin/${default_branch}"
-    command="git lg origin/${default_branch}.."
+    command="lg origin/${default_branch}.."
   else
     echo "## $current_branch...$default_branch"
-    command="git lgg"
+    command="lgg"
   fi
 
-  $command --color
+  git --no-optional-locks $command --color
 }
 export -f log
 
