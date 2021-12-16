@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+sudo apt install -y curl
+
+# install rbenv
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+
+# source rbenv
+. ~/.bash_profile
+
+# prerequisites for ruby
+sudo apt install -y zlib1g-dev libssl-dev
+
+# install latest 2.x ruby version
+rbenv install $(rbenv install -l | grep -v - | grep 2. | tail -1)
+
+# install rbenv-update
+rbenv_update_directoy="$(rbenv root)/plugins/rbenv-update"
+if [ ! -d "$rbenv_update_directoy" ]; then
+  git clone https://github.com/rkh/rbenv-update.git $rbenv_update_directory
+fi
+
+# install the rest via rake
+rake
+
+
+# TODO move to an additional script?
+# further stuff that i need
+fonts-inconsolata
+gnome-tweaks
+kitty # + setup terminal (kitty config)
+gnome-tweaks # --> + set inconsolata as monospace font
+tldr
+pulseeffects lsp-plugins
+chrome-gnome-shell # + some extensions, e.g. system monitor, clipboard

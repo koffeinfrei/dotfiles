@@ -28,6 +28,14 @@
     $ git submodule update --init --recursive
     ```
 
+1. Install rbenv
+    ```bash
+    $ ./install-rbenv
+    ```
+
+    The `install-rbenv` scripts bootstraps rbenv, which is needed for installing the
+    dotfiles.
+
 1. Install the dotfiles
 
     ```bash
