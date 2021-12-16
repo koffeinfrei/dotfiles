@@ -89,7 +89,8 @@ task :packages do
     net-tools \
     thefuck \
     silversearcher-ag \
-    tmux
+    tmux \
+    fzf
    ")
 end
 

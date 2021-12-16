@@ -17,7 +17,7 @@ alias less='less -R -i'
 
 alias ai='sudo aptitude install'
 alias as='sudo aptitude search'
-function asi() { ai $(as "$@" | selecta | awk '{print $2}') ; }
+function asi() { ai $(as "$@" | fzf | awk '{print $2}') ; }
 
 # git aliases
 function gitcc() { git clone "$@" && cd `ls -t | head -1`; }
@@ -36,7 +36,7 @@ function netgrep() { netstat -tulpn | ag "$@"; }
 
 function nfind() { find . -iname "*$@*"; }
 
-function search_history() { eval $(history | awk -F"  " '{print $2}' | sort -u | selecta); }
+function search_history() { eval $(history | awk -F"  " '{print $2}' | sort -u | fzf); }
 
 bind '"\e\C-r":"\C-a search_history -- \C-j"'
 
