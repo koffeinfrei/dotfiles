@@ -139,7 +139,7 @@ augroup vimrcEx
 augroup END
 
 " run tests
-let test#strategy = "neoterm"
+let test#strategy = "neovim"
 
 map <leader>tf :TestFile<cr>
 map <leader>tt :TestNearest<cr>
