@@ -87,7 +87,9 @@ task :packages do
     exuberant-ctags \
     autojump \
     net-tools \
-    thefuck
+    thefuck \
+    silversearcher-ag \
+    tmux
    ")
 end
 
