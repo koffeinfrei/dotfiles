@@ -1,6 +1,3 @@
-[submodule "vendor/selecta"]
-	path = vendor/selecta
-	url = git@github.com:garybernhardt/selecta.git
 [submodule "vendor/git-alpha"]
 	path = vendor/git-alpha
 	url = git@github.com:koffeinfrei/git-alpha.git
