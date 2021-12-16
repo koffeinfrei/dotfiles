@@ -83,7 +83,6 @@ desc "installs the dependent ubuntu packages"
 task :packages do
   system("
     sudo apt install -y \
-    curl \
     trash-cli \
     exuberant-ctags \
     autojump \
