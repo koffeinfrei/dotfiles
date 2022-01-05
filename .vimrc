@@ -140,6 +140,8 @@ augroup END
 
 " run tests
 let test#strategy = "neovim"
+" open the terminal in normal mode, so we can navigate the output
+let g:test#neovim#start_normal = 1
 
 map <leader>tf :TestFile<cr>
 map <leader>tt :TestNearest<cr>
