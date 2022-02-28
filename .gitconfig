@@ -40,6 +40,7 @@
     conflicts = !vim -p `git diff --name-only --diff-filter=U`
     resolve-ours = !git checkout --ours $@ && git add $@
     resolve-theirs = !git checkout --theirs $@ && git add $@
+    merged = "!f() { git co main && git fa && git rebase && git b -d $@ ; }; f"
     # explicit aliases for implicitly available ones
     alpha = !git-alpha
     fixup = !git-fixup
