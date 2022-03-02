@@ -32,7 +32,7 @@
     ri = rebase -i --autosquash
     ss = stash save
     sp = stash pop
-    sv = "!f() { git show stash@{$@}; }; f"
+    sv = "!f() { git stash show -p stash@{$@}; }; f"
     sl = stash list
     pf = push --force-with-lease
     who = shortlog -ns --
