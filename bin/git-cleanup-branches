@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+# set -eu
+
+# prune remote branches
+echo "🥁 Pruning remote branches..."
+git fa --prune
+echo
+
+# remove merged branches
+echo "🥁 Removing merged branches..."
+git b --merged | grep -v `git default-branch` | xargs --no-run-if-empty git branch -d
+echo
+
+# prompt to remove branches from other authors
+echo "🥁 Removing branches from other authors..."
+me=$(git config user.name)
+for branch in $(git b | grep -v `git default-branch`); do
+  log=$(git lg $(git default-branch)..$branch)
+  is_by_me=$()
+
+  if ! git lg $(git default-branch)..$branch | grep -q "$me"
+  then
+    echo "You don't seem to have any commits in the branch  ⑂ $branch"
+    echo
+    git lg --color $(git default-branch)..$branch | sed "s/^/  /g"
+    echo
+    echo
+
+    read -p "Delete the branch '$branch'? (y/n)? " choice
+    case "$choice" in
+      y|Y ) git b -D $branch;;
+      * ) echo "Ok, keeping it.";;
+    esac
+    echo
+  fi
+done

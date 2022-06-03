@@ -47,6 +47,7 @@
     squash = !git-squash
     watch-status = !git-watch-status
     watch-log = !git-watch-log
+    cleanup-branches = !git-cleanup-branches
 [core]
     excludesfile = ~/.gitignore
     editor = vim
