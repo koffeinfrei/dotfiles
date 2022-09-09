@@ -41,6 +41,7 @@
     resolve-ours = !git checkout --ours $@ && git add $@
     resolve-theirs = !git checkout --theirs $@ && git add $@
     merged = "!f() { git co main && git fa && git rebase && git b -d $@ ; }; f"
+    trash = "!f() { git tag trash/$@ $@ && git branch -D $@; }; f"
     # explicit aliases for implicitly available ones
     alpha = !git-alpha
     fixup = !git-fixup
