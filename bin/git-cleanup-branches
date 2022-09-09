@@ -2,6 +2,9 @@
 
 # set -eu
 
+git ss
+git co `git default-branch`
+
 # prune remote branches
 echo "🥁 Pruning remote branches..."
 git fa --prune
@@ -35,3 +38,5 @@ for branch in $(git b | grep -v `git default-branch`); do
     echo
   fi
 done
+
+git co -
