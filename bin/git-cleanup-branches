@@ -12,7 +12,7 @@ echo
 
 # remove merged branches
 echo "🥁 Removing merged branches..."
-git b --merged | grep -v `git default-branch` | xargs --no-run-if-empty git branch -d
+git b --format='%(refname:short)' --merged | grep -v `git default-branch` | xargs --no-run-if-empty git branch -d
 echo
 
 # prompt to remove branches from other authors
