@@ -43,7 +43,7 @@
     merged = "!f() { git co main && git fa && git rebase && git b -d $@ ; }; f"
     trash = "!f() { git tag trash/$@ $@ && git branch -D $@; }; f"
     update-default=!git co $(git default-branch) && git fetch && git rebase
-    update-current=!git co $(git default-branch) && git fetch && git rebase && git co - && git rebase $(git default-branch)
+    update-current=!git update-default && git co - && git rebase $(git default-branch)
     # explicit aliases for implicitly available ones
     alpha = !git-alpha
     fixup = !git-fixup
