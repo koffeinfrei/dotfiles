@@ -156,7 +156,7 @@ map <leader>sa :Ag<space>
 " search stylesheets
 map <leader>ss :Ag -G "\.(sass\|css\|scss)$"<space>
 " search javascripts
-map <leader>sj :Ag -G "\.(js\|coffee\|coffee\.erb\|es6\|ts)$"<space>
+map <leader>sj :Ag -G "\.(js\|coffee\|coffee\.erb\|es6\|ts\|svelte)$"<space>
 " search ruby files
 map <leader>sr :Ag -G "\.(rb)$"<space>
 " search view files
