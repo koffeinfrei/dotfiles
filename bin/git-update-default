@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# set -eu
+
+default_branch=$(git default-branch)
+current_branch=$(git branch --show-current)
+
+if [ "$current_branch" == "$default_branch" ]; then
+  git fetch origin
+  git rebase
+else
+  git fetch origin $default_branch:$default_branch
+fi
