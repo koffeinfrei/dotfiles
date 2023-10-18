@@ -36,6 +36,7 @@
     sl = stash list
     pf = push --force-with-lease
     who = shortlog -ns --
+    why = blame -w -C -C -C
     default-branch = !(git symbolic-ref -q refs/remotes/origin/HEAD || echo 'main') | sed 's@^refs/remotes/origin/@@'
     conflicts = !vim -p `git diff --name-only --diff-filter=U`
     resolve-ours = !git checkout --ours $@ && git add $@
