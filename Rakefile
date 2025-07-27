@@ -21,7 +21,7 @@ task :install do
 
     target = File.join(home, f)
 
-    if File.exists?(target) || File.symlink?(target)
+    if File.exist?(target) || File.symlink?(target)
       unless overwrite_all || backup_all || skip_all
         puts "File already exists: #{target}, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all"
         case STDIN.gets.chomp
@@ -57,7 +57,7 @@ task :uninstall do
     FileUtils.rm(target) if File.symlink?(target)
 
     backup = File.join(home, "#{f}.dotfiles~")
-    FileUtils.mv(backup, target) if File.exists? backup
+    FileUtils.mv(backup, target) if File.exist? backup
   end
 end
 
@@ -73,8 +73,8 @@ task :neovim do
   source = File.join(Dir.home, '.vimrc')
   target = File.join(config_dir, 'init.vim')
 
-  FileUtils.mkdir(config_dir) unless File.exists?(config_dir)
-  FileUtils.ln_s(source, target) unless File.exists?(target)
+  FileUtils.mkdir(config_dir) unless File.exist?(config_dir)
+  FileUtils.ln_s(source, target) unless File.exist?(target)
 
   puts "linked #{target} -> #{source}."
 end
