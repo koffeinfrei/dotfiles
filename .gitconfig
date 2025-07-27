@@ -55,6 +55,7 @@
     update-default=!git-update-default
 [core]
     excludesfile = ~/.gitignore
+    commentChar = ";"
 [push]
     default = current
 [commit]
