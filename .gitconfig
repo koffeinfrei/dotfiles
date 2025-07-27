@@ -27,7 +27,7 @@
     amend = commit --amend
     au = add -u
     ap = add -p
-    edit = !vim -p $(git ls-files -m)
+    edit = !$EDITOR -p $(git ls-files -m)
     srs = !git stash && git rebase && git stash pop
     ri = rebase -i --autosquash
     ss = stash save
@@ -38,7 +38,7 @@
     who = shortlog -ns --
     why = blame -w -C -C -C
     default-branch = !(git symbolic-ref -q refs/remotes/origin/HEAD || echo 'main') | sed 's@^refs/remotes/origin/@@'
-    conflicts = !vim -p `git diff --name-only --diff-filter=U`
+    conflicts = !$EDITOR -p `git diff --name-only --diff-filter=U`
     resolve-ours = !git checkout --ours $@ && git add $@
     resolve-theirs = !git checkout --theirs $@ && git add $@
     merged = "!f() { git co main && git fa && git rebase && git b -d $@ ; }; f"
@@ -54,7 +54,6 @@
     update-default=!git-update-default
 [core]
     excludesfile = ~/.gitignore
-    editor = vim
 [push]
     default = current
 [commit]
