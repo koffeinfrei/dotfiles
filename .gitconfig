@@ -50,6 +50,7 @@
     squash = !git-squash
     watch-status = !git-watch-status
     watch-log = !git-watch-log
+    watch-diff = !watch --color --interval 1 --no-title git diff --color $@
     cleanup-branches = !git-cleanup-branches
     update-default=!git-update-default
 [core]
