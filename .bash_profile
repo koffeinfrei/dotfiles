@@ -16,7 +16,7 @@ export NVM_DIR="$HOME/.nvm"
 # autojump
 . /usr/share/autojump/autojump.sh
 
-export EDITOR=vim
+export EDITOR=nvim
 
 export FZF_DEFAULT_COMMAND='ag --path-to-ignore ~/.ignore --hidden --nogroup --nocolor --column -l .'
 
